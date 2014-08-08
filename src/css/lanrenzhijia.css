@@ -11,6 +11,6 @@
 
 
 .vconlist{ width:100%;}
-.vconlist li a{height:30px;line-height:30px;text-align:center;display:block;font-size:18px;color:#866f67;font-size:25px;background:url(../pic/bv.jpg) no-repeat;background-size: 100% 100%;font-family:"\5FAE\8F6F\96C5\9ED1";}
-.vconlist li.select a,.vconlist li a:hover{color:#ed4948;text-decoration:none;font-size:25px;background:url(../pic/bv1.jpg) no-repeat;background-size: 100% 100%;}
+.vconlist li a{height:30px;line-height:30px;text-align:center;display:block;font-size:18px;color:#866f67;font-size:25px;background:url(../images/bv.jpg) no-repeat;background-size: 100% 100%;font-family:"\5FAE\8F6F\96C5\9ED1";}
+.vconlist li.select a,.vconlist li a:hover{color:#ed4948;text-decoration:none;font-size:25px;background:url(../images/bv1.jpg) no-repeat;background-size: 100% 100%;}
 /* */
