@@ -6,11 +6,11 @@
 .v02{background-position:0 -16px;}
 
 
-.vtitle{height:55px;background:url(../images/ban.png) no-repeat;line-height:35px;border-bottom:1px solid #ccb6a9;margin-top:0px;text-align:center;font-size:25px;color:#F8E6B8;font-family:"\5FAE\8F6F\96C5\9ED1";cursor:pointer;}
+.vtitle{height:55px;background:url(../images/ban.png) no-repeat;background-size: 100% 100%;line-height:35px;border-bottom:1px solid #ccb6a9;margin-top:0px;text-align:center;font-size:25px;color:#F8E6B8;font-family:"\5FAE\8F6F\96C5\9ED1";cursor:pointer;}
 .vtitle em{margin:10px 10px 0 0;}
 
 
 .vconlist{ width:100%;}
-.vconlist li a{height:30px;line-height:30px;text-align:center;display:block;font-size:18px;color:#866f67;font-size:25px;background:url(../pic/bv.jpg) no-repeat;font-family:"\5FAE\8F6F\96C5\9ED1";}
-.vconlist li.select a,.vconlist li a:hover{color:#ed4948;text-decoration:none;font-size:25px;background:url(../pic/bv1.jpg) no-repeat;}
+.vconlist li a{height:30px;line-height:30px;text-align:center;display:block;font-size:18px;color:#866f67;font-size:25px;background:url(../pic/bv.jpg) no-repeat;background-size: 100% 100%;font-family:"\5FAE\8F6F\96C5\9ED1";}
+.vconlist li.select a,.vconlist li a:hover{color:#ed4948;text-decoration:none;font-size:25px;background:url(../pic/bv1.jpg) no-repeat;background-size: 100% 100%;}
 /* */
