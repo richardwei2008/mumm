@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>选择车手</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <link href="css/jquery.mobile-1.4.3.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery.mobile.customize-1.4.3.css" rel="stylesheet" type="text/css"/>
+    <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>
+</head>
+<body style="background:#000;">
+<div data-role="page" id="racer">
+    <div data-role="content" data-position="fixed">
+        <div align="center"><img src="images/top_racer.jpg" width="100%" border="0" hspace="0" vspace="0"/></div>
+        <div class="custom-collapsibleset-bg"
+                data-role="collapsibleset" data-inset="false" data-iconpos="right" data-expanded-icon="carat-d" data-collapsed-icon="carat-r">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3 >法拉利车队</h3>
+                <fieldset data-role="controlgroup" data-mini="true" data-corners="false" data-iconpos="right" >
+                    <input name="radio-choice-w-1" id="radio-choice-w-1a" type="radio" checked="checked" value="on">
+                    <label for="radio-choice-w-1a">阿隆索</label>
+                    <input name="radio-choice-w-1" id="radio-choice-w-1b" type="radio" value="off">
+                    <label for="radio-choice-w-1b">基米 莱科宁</label>
+                    <input name="radio-choice-w-1" id="radio-choice-w-1c" type="radio" value="off">
+                    <label for="radio-choice-w-1c">齐尔顿 玛鲁西亚</label>
+                    <input name="radio-choice-w-1" id="radio-choice-w-1d" type="radio" value="off">
+                    <label for="radio-choice-w-1d">比安奇 玛鲁西亚</label>
+                </fieldset>
+            </div>
+            <div data-role="collapsible">
+                <h3 >红牛车队</h3>
+                <fieldset data-role="controlgroup" data-mini="true"  data-corners="false" data-iconpos="right">
+                    <input name="radio-choice-w-1" id="radio-choice-w-1e" type="radio" value="off">
+                    <label for="radio-choice-w-1e">维泰尔</label>
+                    <input name="radio-choice-w-1" id="radio-choice-w-1f" type="radio" value="off">
+                    <label for="radio-choice-w-1f">里卡多</label>
+                </fieldset>
+            </div>
+            <div data-role="collapsible">
+                <h3 >迈凯轮车队</h3>
+                <fieldset data-role="controlgroup" data-mini="true"  data-corners="false" data-iconpos="right">
+                    <input name="radio-choice-w-1" id="radio-choice-w-1g" type="radio" value="off">
+                    <label for="radio-choice-w-1g">马格努森</label>
+                    <input name="radio-choice-w-1" id="radio-choice-w-1h" type="radio" value="off">
+                    <label for="radio-choice-w-1h">巴顿</label>
+                </fieldset>
+            </div>
+            <div class="ui-btn-group-customized">
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-l-customized" data-mini="true" data-inline="true"
+                   href="instruction.html" data-transition="slide" data-ajax="false">查看活动详情</a>
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-r-customized" data-mini="true" data-inline="true"
+                   href="#pub" data-transition="slide" data-ajax="false">下  一  步</a>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div data-role="footer" data-position="fixed">
+        <h4>页脚</h4>
+    </div>
+    -->
+</div>
+
+<div data-role="page" id="pub">
+    <div data-role="content" data-position="fixed">
+        <div align="center"><img src="images/top_pub.jpg" width="100%" border="0" hspace="0" vspace="0"/></div>
+        <div class="custom-collapsibleset-bg"
+             data-role="collapsibleset" data-inset="false" data-iconpos="right" data-expanded-icon="carat-d" data-collapsed-icon="carat-r">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3 >上海</h3>
+                <fieldset data-role="controlgroup" data-mini="true" data-corners="false" data-iconpos="right" >
+                    <input name="radio-choice-w-2" id="radio-choice-w-2a" type="radio" checked="checked" value="on">
+                    <label for="radio-choice-w-2a">酒吧1</label>
+                    <input name="radio-choice-w-2" id="radio-choice-w-2b" type="radio" value="off">
+                    <label for="radio-choice-w-2b">酒吧2</label>
+                    <input name="radio-choice-w-2" id="radio-choice-w-2c" type="radio" value="off">
+                    <label for="radio-choice-w-2c">酒吧3</label>
+                    <input name="radio-choice-w-2" id="radio-choice-w-2d" type="radio" value="off">
+                    <label for="radio-choice-w-2d">酒吧4</label>
+                </fieldset>
+            </div>
+            <div data-role="collapsible">
+                <h3 >北京</h3>
+                <fieldset data-role="controlgroup" data-mini="true"  data-corners="false" data-iconpos="right">
+                    <input name="radio-choice-w-2" id="radio-choice-w-2e" type="radio" value="off">
+                    <label for="radio-choice-w-2e">酒吧5</label>
+                    <input name="radio-choice-w-2" id="radio-choice-w-2f" type="radio" value="off">
+                    <label for="radio-choice-w-2f">酒吧6</label>
+                </fieldset>
+            </div>
+            <div data-role="collapsible">
+                <h3 >杭州</h3>
+                <fieldset data-role="controlgroup" data-mini="true"  data-corners="false" data-iconpos="right">
+                    <input name="radio-choice-w-2" id="radio-choice-w-2g" type="radio" value="off">
+                    <label for="radio-choice-w-2g">酒吧7</label>
+                    <input name="radio-choice-w-2" id="radio-choice-w-2h" type="radio" value="off">
+                    <label for="radio-choice-w-2h">酒吧8</label>
+                </fieldset>
+            </div>
+            <div class="ui-input-purchase-code">
+                <div class="ui-field-contain">
+                    <label class="ui-input-label-customized" for="purchasecode"></label>
+                    <input class="ui-input-text-customized" name="purchasecode" id="purchasecode" type="text"  data-mini="true" placeholder="请输入购买码" value="">
+                </div>
+            </div>
+            <div class="ui-btn-group-customized">
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-l-customized" data-mini="true" data-inline="true"
+                   href="#racer" data-transition="slide" data-ajax="false">返      回</a>
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-r-customized" data-mini="true" data-inline="true"
+                        href="#cellphone" data-transition="slide" data-ajax="false">下  一  步</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div data-role="page" id="cellphone">
+    <div data-role="content" data-position="fixed">
+        <div align="center"><img src="images/top_cell.jpg" width="100%" border="0" hspace="0" vspace="0"/></div>
+        <div class="custom-collapsibleset-bg"
+             data-role="collapsibleset" data-inset="false" data-iconpos="right" data-expanded-icon="carat-d" data-collapsed-icon="carat-r">
+            <div class="ui-input-cellphone">
+                <div class="ui-field-contain">
+                    <label class="ui-input-label-customized" for="cellphone"></label>
+                    <input class="ui-input-text-customized" name="cellphone" id="cellphone" type="text"  data-mini="true" placeholder="请输入您的电话号码" value="">
+                </div>
+            </div>
+            <div class="ui-btn-group-customized">
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-l-customized" data-mini="true" data-inline="true"
+                    href="#pub" data-transition="slide" data-ajax="false">返      回</a>
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-r-customized" data-mini="true" data-inline="true"
+                    href="submitted.html" data-transition="slide" data-ajax="false">提      交</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

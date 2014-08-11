@@ -3,129 +3,69 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>选择酒吧</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
     <meta content="telephone=no" name="format-detection"/>
     <meta content="yes" name="apple-mobile-web-app-capable"/>
     <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
-
-    <link href="css/module.css" rel="stylesheet">
-
+    <link href="css/jquery.mobile-1.4.3.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery.mobile.customize-1.4.3.css" rel="stylesheet" type="text/css"/>
+    <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>
 </head>
 
 
 <body style="background:#000;">
 
-
-<div align="center"><img src="images/top2.jpg" width="100%" border="0" hspace="0" vspace="0"/>
-
-</div>
-<div id="swap_9363" class="e-wrap template-style-10"
-     style="background:url() center no-repeat; background-size: 100% 100%;">
-
-    <div class="e-sect rich-text"
-         style="background:url(images/bg.jpg) center no-repeat; background-size: 100% 100%; height:auto;">
-
-
-        <div class="e-widget-box">
-            <div class="e-widget-title" style="display:none;"></div>
-
-            <div class="e-widget-content">
-
-
-                <p style="text-align:center;">
-
-
-                <div style="width:100%;">
-
-                    <div class="vtitle"><em class="v"></em>上海</div>
-                    <div class="vcon">
-                        <ul class="vconlist clearfix">
-                            <li class="select"><a href="javascript:;">酒吧</a></li>
-                            <li><a href="javascript:;">酒吧</a></li>
-                            <li><a href="javascript:;">酒吧</a></li>
-                        </ul>
-                    </div>
-                    <div class="vtitle"><em class="v"></em>北京</div>
-                    <div class="vcon" style="display: none;">
-                        <ul class="vconlist clearfix">
-                            <li><a href="javascript:;">酒吧</a></li>
-                            <li><a href="javascript:;">酒吧</a></li>
-                            <li><a href="javascript:;">酒吧</a></li>
-                        </ul>
-                    </div>
-                    <div class="vtitle"><em class="v"></em>杭州</div>
-                    <div class="vcon" style="display: none;">
-                        <ul class="vconlist clearfix">
-                            <li><a href="javascript:;">酒吧</a></li>
-                            <li><a href="javascript:;">酒吧</a></li>
-                            <li><a href="javascript:;">酒吧</a></li>
-                        </ul>
-                    </div>
+<div data-role="page" id="page">
+    <div data-role="content" data-position="fixed">
+        <div align="center"><img src="images/top_pub.jpg" width="100%" border="0" hspace="0" vspace="0"/></div>
+        <div class="custom-collapsibleset-bg"
+             data-role="collapsibleset" data-inset="false" data-iconpos="right" data-expanded-icon="carat-d" data-collapsed-icon="carat-r">
+            <div data-role="collapsible">
+                <h3 >上海</h3>
+                <fieldset data-role="controlgroup" data-mini="true" data-corners="false" data-iconpos="right" >
+                    <input name="radio-choice-w-6" id="radio-choice-w-6a" type="radio" checked="checked" value="on">
+                    <label for="radio-choice-w-6a">酒吧1</label>
+                    <input name="radio-choice-w-6" id="radio-choice-w-6b" type="radio" value="off">
+                    <label for="radio-choice-w-6b">酒吧2</label>
+                    <input name="radio-choice-w-6" id="radio-choice-w-6c" type="radio" value="off">
+                    <label for="radio-choice-w-6c">酒吧3</label>
+                    <input name="radio-choice-w-6" id="radio-choice-w-6d" type="radio" value="off">
+                    <label for="radio-choice-w-6d">酒吧4</label>
+                </fieldset>
+            </div>
+            <div data-role="collapsible">
+                <h3 >北京</h3>
+                <fieldset data-role="controlgroup" data-mini="true"  data-corners="false" data-iconpos="right">
+                    <input name="radio-choice-w-6" id="radio-choice-w-6e" type="radio" value="off">
+                    <label for="radio-choice-w-6e">酒吧5</label>
+                    <input name="radio-choice-w-6" id="radio-choice-w-6f" type="radio" value="off">
+                    <label for="radio-choice-w-6f">酒吧6</label>
+                </fieldset>
+            </div>
+            <div data-role="collapsible">
+                <h3 >杭州</h3>
+                <fieldset data-role="controlgroup" data-mini="true"  data-corners="false" data-iconpos="right">
+                    <input name="radio-choice-w-6" id="radio-choice-w-6g" type="radio" value="off">
+                    <label for="radio-choice-w-6g">酒吧7</label>
+                    <input name="radio-choice-w-6" id="radio-choice-w-6h" type="radio" value="off">
+                    <label for="radio-choice-w-6h">酒吧8</label>
+                </fieldset>
+            </div>
+            <div class="ui-input-purchase-code">
+                <div class="ui-field-contain">
+                    <label class="ui-input-label-customized" for="purchasecode"></label>
+                    <input class="ui-input-text-customized" name="purchasecode" id="purchasecode" type="text"  data-mini="true" placeholder="请输入购买码" value="">
                 </div>
-
-
-                </p>
-
-
-                <p style="text-align:center;"><br/></p>
-
-                <p style="text-align:center;"><br/></p>
-
-                <p><br/></p>
-
-                <p style="text-align:center;">输入购买码：<input type="text" class="Selectd"
-                                                           name="name"/></p>
-
-                <p style="text-align:center;"><br/><br/></p>
-
-                <p style="text-align:center;">
-                    <a href="#" target="_self"><img src="images/back.png" style="width:127px;height:38px;"
-                                                    title="01_22.png" width="127" height="38" border="0" hspace="0"
-                                                    vspace="0"/></a>
-                    <a href="#" target="_self"><img src="images/xyb.png" title="01_23.png" width="137" height="38"
-                                                    border="0" hspace="0" vspace="0" style="width:137px;height:38px;"/></a>
-                </p>
-
-
-                <p style="text-align:center;"><br/></p>
-
-                <p style="text-align:center;"><br/></p>
-
-                <p><br/></p>
-
-
+             </div>
+            <div class="ui-btn-group-customized">
+                <button class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-l-customized" data-mini="true" data-inline="true">返      回</button>
+                <button class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-r-customized" data-mini="true" data-inline="true">下  一  步</button>
             </div>
         </div>
     </div>
-</div>
-<!-- backTop start -->
-
-
-<link href="css/lanrenzhijia.css" type="text/css" rel="stylesheet"/>
-<script src="js/jquery-1.11.1.min.js"></script>
-
-<script>
-    $(function () {
-        //菜单隐藏展开
-        var tabs_i = 0
-        $('.vtitle').click(function () {
-            var _self = $(this);
-            var j = $('.vtitle').index(_self);
-            if (tabs_i == j) return false;
-            tabs_i = j;
-            $('.vtitle em').each(function (e) {
-                if (e == tabs_i) {
-                    $('em', _self).removeClass('v01').addClass('v02');
-                } else {
-                    $(this).removeClass('v02').addClass('v01');
-                }
-            });
-            $('.vcon').slideUp().eq(tabs_i).slideDown();
-        });
-    })
-</script>
-
-
+    </div>
 </body>
 </html>
