@@ -923,7 +923,8 @@ html .ui-alt-icon .ui-radio-off:after {
 }
 .ui-radio .ui-btn.ui-radio-on:after {
 	background-image: none;
-	background-color: #fff;
+    background-color: #F8E6B8;
+	/*background-color: #fff;*/
 	width: 8px;
 	height: 8px;
 	border-width: 5px;
@@ -1082,7 +1083,7 @@ html .ui-bar-a .ui-radio-on:after,
 html .ui-body-a .ui-radio-on:after,
 html body .ui-group-theme-a .ui-radio-on:after,
 .ui-btn.ui-radio-on.ui-btn-a:after {
-	border-color:			#3388cc /*{a-active-background-color}*/;
+	border-color: #cc1137 /*#3388cc{a-active-background-color}*/;
 }
 /* Focus */
 .ui-page-theme-a .ui-btn:focus,
