@@ -20,7 +20,6 @@ a, a:link, a:visited, a:hover, a:active {cursor: pointer;text-decoration:none; c
 .app_main .btn_sc06{ top:77.96%; left:25.93%;}
 .app_main .btn_tj{ display:block; width:80.12%; height:22.74%; line-height:0; font-size:0; background:url(#); position:absolute;}
 .app_main .btn_tj07{ top:67.96%; left:25.93%;}
-
 .ui-btn-group-customized {
     padding: 0 .53em;
 }
