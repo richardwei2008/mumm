@@ -31,21 +31,21 @@
 			"subscribe_time": null
 		};
 		window.shareData = {
-			"imgUrl": window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/image/icon.jpg",
+			"imgUrl": window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/images/share.jpg",
 			//可以是页面的头像，也可以是自己定义的一张图片不变，每个页面可以有这个JS
-			"timeLineLink": window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/index.html",
-			"sendFriendLink": window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/index.html",
+			"timeLineLink": window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/share.html",
+			"sendFriendLink": window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/share.html",
 			"weiboLink": window.location.href.substring(0, window.location.href.lastIndexOf('/')),
 			//发送朋友圈
-			"tTitle": "听好声音 喝安慕希 抢百万微信红包！",
-			"tContent": "伊利安慕希不踩白格 搶百萬微信紅包 I want you！",
+			"tTitle": "参与玛姆香槟F1竞猜，尽享礼遇！",
+			"tContent": "即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼",
 			//发送给朋友
-			"fTitle": "听好声音 喝安慕希 抢百万微信红包！",
-			"fContent": "伊利安慕希不踩白格 搶百萬微信紅包 I want you！",
-			"wContent": "听好声音 喝安慕希 抢百万微信红包！"
+			"fTitle": "参与玛姆香槟F1竞猜，尽享礼遇！",
+			"fContent": "即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼",
+			"wContent": "参与玛姆香槟F1竞猜，尽享礼遇！"
 		};
-		var content = "伊利安慕希不踩白格 搶百萬微信紅包 I want you！";
-		var title = "听好声音 喝安慕希 抢百万微信红包！";		
+		var content = "即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼";
+		var title = "参与玛姆香槟F1竞猜，尽享礼遇！";
 		// if (url.indexOf('?') < 0) {
 		// 	url = url + '?user=richard';
 		// }

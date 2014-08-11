@@ -1,5 +1,5 @@
 
-body,html {font: normal 100% "微软雅黑","Microsoft Yahei"; color:#FFF; background:#000;-webkit-text-size-adjust:none;}
+body,html {color:#FFF; background:#000;-webkit-text-size-adjust:none;}
 a, a:link, a:visited, a:hover, a:active {cursor: pointer;text-decoration:none; color:#FFF;}
 .app_main .bg_pic{ display:block; max-width:100%; width:100%;}
 

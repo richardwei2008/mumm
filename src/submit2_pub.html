@@ -11,6 +11,7 @@
     <link href="css/jquery.mobile-1.4.3.css" rel="stylesheet" type="text/css"/>
     <link href="css/jquery.mobile.customize-1.4.3.css" rel="stylesheet" type="text/css"/>
     <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    <script src="js/beyond.wechat.share-0.1.js" type="text/javascript"></script>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>
 </head>
@@ -23,7 +24,7 @@
         <div align="center"><img src="images/top_pub.jpg" width="100%" border="0" hspace="0" vspace="0"/></div>
         <div class="custom-collapsibleset-bg"
              data-role="collapsibleset" data-inset="false" data-iconpos="right" data-expanded-icon="carat-d" data-collapsed-icon="carat-r">
-            <div data-role="collapsible">
+            <div data-role="collapsible" data-collapsed="false">
                 <h3 >上海</h3>
                 <fieldset data-role="controlgroup" data-mini="true" data-corners="false" data-iconpos="right" >
                     <input name="radio-choice-w-6" id="radio-choice-w-6a" type="radio" checked="checked" value="on">
@@ -61,8 +62,10 @@
                 </div>
              </div>
             <div class="ui-btn-group-customized">
-                <button class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-l-customized" data-mini="true" data-inline="true">返      回</button>
-                <button class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-r-customized" data-mini="true" data-inline="true">下  一  步</button>
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-l-customized" data-mini="true" data-inline="true"
+                   href="submit1_racer.html" data-transition="slide" data-ajax="false">返      回</a>
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-r-customized" data-mini="true" data-inline="true"
+                   href="submit3_cell.html" data-transition="slide" data-ajax="false">下  一  步</a>
             </div>
         </div>
     </div>
