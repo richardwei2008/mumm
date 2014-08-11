@@ -1,0 +1,39 @@
+.ui-content {
+    border-width: 0;
+    overflow: visible;
+    overflow-x: hidden;
+    padding: 0
+}
+fieldset.ui-controlgroup {
+    padding: 0;
+    margin: 0;
+}
+.ui-collapsible-set {
+    margin: 0 0;
+}
+.ui-collapsible-heading .ui-btn {
+    text-align: center;
+}
+.ui-checkbox .ui-btn, .ui-radio .ui-btn {
+    text-align: center;
+}
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited {
+    color: #F8E6B8;
+}
+/*
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head+body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head+body .ui-btn.ui-btn-a:visited {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.ui-collapsible-content {
+    display: block;
+    margin: 0;
+    padding: 0 0;
+}
+
+*/
+.custom-collapsibleset-bg {
+    background:url(../images/bg.jpg) center no-repeat;
+    background-size: 100% 100%;
+    height:1020px;
+}
