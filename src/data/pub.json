@@ -1,0 +1,24 @@
+{
+    "data" : [
+        {
+            "location" : "上海",
+            "collapsed" : false,
+            "pubs" : [ { "id" : 1, "name" : "K歌之王"}]
+        },
+        {
+            "location" : "杭州",
+            "collapsed" : true,
+            "pubs" : [ { "id" : 2, "name" : "Linx"},{ "id" : 3, "name" : "G+"}]
+        },
+        {
+            "location" : "北京",
+            "collapsed" : true,
+            "pubs" : [ { "id" : 4, "name" : "Circle"},{ "id" : 5, "name" : "唐会"}]
+        },
+        {
+            "location" : "深圳",
+            "collapsed" : true,
+            "pubs" : [ { "id" : 6,  "name" : "LeNest"}]
+        }
+    ]
+}
