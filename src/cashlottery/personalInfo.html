@@ -10,6 +10,14 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
     <link href="../css/module.css" rel="stylesheet">
     <script src="../js/beyond.wechat.share-0.1.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(window).ready(function () {
+            $("#submitBtn").click(function() {
+                window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/mumm.html";
+            });
+        });
+    </script>
 </head>
 <body style="background:#000;">
 <div align="center"><img src="../images/top_cell.jpg" width="100%" border="0" hspace="0" vspace="0"/>
@@ -39,7 +47,7 @@
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><input type="image" name="cmdOk" src="../images/submit.png" align="top"/></td>
+                        <td><input id="submitBtn" type="image" name="cmdOk" src="../images/submit.png" align="top"/></td>
                     </tr>
                     <tr>
                         <td colspan="2"><img src="../images/wine.png" width="280" height="195"/></td>
