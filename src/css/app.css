@@ -1,5 +1,11 @@
 
-body,html {color:#FFF; background:#000;-webkit-text-size-adjust:none;}
+body,html {
+    margin : 0;
+    padding: 0;
+    color:#FFF;
+    background:#000;
+    -webkit-text-size-adjust:none;
+}
 a, a:link, a:visited, a:hover, a:active {cursor: pointer;text-decoration:none; color:#FFF;}
 .app_main .bg_pic{ display:block; max-width:100%; width:100%;}
 
@@ -29,7 +35,6 @@ a, a:link, a:visited, a:hover, a:active {cursor: pointer;text-decoration:none; c
     border-color: #606060 /*#ddd{a-bhover-border}*/;
     float: left;
     color: #f8f1ef !important /*#333{a-bhover-color}*/;
-    text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 0 /*{a-bhover-shadow-radius}*/ #f3f3f3 /*{a-bhover-shadow-color}*/;
 }
 .ui-btn-r-customized {
     width: 100px !important;
@@ -37,7 +42,9 @@ a, a:link, a:visited, a:hover, a:active {cursor: pointer;text-decoration:none; c
     border-color: #606060 /*#ddd{a-bhover-border}*/;
     float: right;
     color: #f8f1ef !important /*#333{a-bhover-color}*/;
-    text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 0 /*{a-bhover-shadow-radius}*/ #f3f3f3 /*{a-bhover-shadow-color}*/;
+}
+.ui-radio-label-customized {
+    background-color: #52151A !important /*#ededed{a-bhover-background-color}*/;
 }
 .ui-input-purchase-code {
     width: 35%;
