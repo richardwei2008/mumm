@@ -10,12 +10,30 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 
     <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>
     <script src="../js/beyond.wechat.share-0.1.1.js" type="text/javascript"></script>
+    <script src="../js/app-1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(window).ready(function () {
+            var openid = $.getUrlParam('openid');
+            sessionStorage.setItem('openid', openid);
+            if (openid === null || openid === 'null') {
+                openid = "FakeId";
+            }
+            $("#schedule").unbind('click').bind("click", function() {
+                window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/../info/schedule.html?openid=' + openid;
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="app_main">
     <img class="bg_pic" src="../images/missbg.jpg">
+    <a id="schedule" class="btn_exp btn_zj05"></a>
+    <!--
     <a href="../info/schedule.html" class="btn_exp btn_zj05"></a>
+    -->
 </div>
 </body>
 </html>
