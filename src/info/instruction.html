@@ -26,8 +26,8 @@
             if (openid === null || openid === 'null') {
                 openid = "FakeId";
             }
-            $("#join").click(function() {
-                window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/../index.html?openid=' + openid;
+            $("#join").unbind('click').bind("click", function() {
+                window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/../submit.html?openid=' + openid;
             });
         });
     </script>

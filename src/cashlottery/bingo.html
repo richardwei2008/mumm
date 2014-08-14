@@ -25,10 +25,10 @@
             if (openid === null || openid === 'null') {
                 openid = "FakeId";
             }
-            $("#schedule").click(function() {
+            $("#schedule").unbind('click').bind("click", function() {
                 window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/../info/schedule.html?openid=' + openid;
             });
-            $("#qrcode").click(function() {
+            $("#qrcode").unbind('click').bind("click", function() {
                 $.ajax({
                     async : false,
                     type : "POST",
