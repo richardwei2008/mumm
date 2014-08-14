@@ -9,8 +9,46 @@
     <meta content="yes" name="apple-mobile-web-app-capable"/>
     <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 
-    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <link href="../css/jquery.mobile-1.4.3.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/jquery.mobile.customize-1.4.3.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/app.css" rel="stylesheet" type="text/css"/>
+
+    <script src="../js/json2.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>
     <script src="../js/beyond.wechat.share-0.1.js" type="text/javascript"></script>
+    <script src="../js/app-1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function onBridgeReady(){
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+        if (typeof WeixinJSBridge == "undefined"){
+            if( document.addEventListener ){
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            }else if (document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        }else{
+            onBridgeReady();
+        }
+        $(window).ready(function () {
+            var openid = $.getUrlParam('openid');
+            sessionStorage.setItem('openid', openid);
+            if (openid === null || openid === 'null') {
+                openid = "FakeId";
+            }
+            if (isWeiXin() && (openid === null || openid === 'null' || openid === 'FakeId')) {
+                window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/../share.html";
+            }
+        });
+
+    </script>
+    <!--
+    <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../js/beyond.wechat.share-0.1.js" type="text/javascript"></script>
+    <script src="../js/app-1.0.js" type="text/javascript"></script>
+   -->
 </head>
 
 <body>

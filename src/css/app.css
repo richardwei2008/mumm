@@ -1,5 +1,8 @@
-
-body,html {
+body, h1, h2, h3, h4, h5, h6, hr, p, dl, dt, dd, ul, ol, li, form, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0
+}
+body,html,form {
     margin : 0;
     padding: 0;
     color:#FFF;
@@ -26,8 +29,22 @@ a, a:link, a:visited, a:hover, a:active {cursor: pointer;text-decoration:none; c
 .app_main .btn_sc06{ top:77.96%; left:25.93%;}
 .app_main .btn_tj{ display:block; width:80.12%; height:22.74%; line-height:0; font-size:0; background:url(#); position:absolute;}
 .app_main .btn_tj07{ top:67.96%; left:25.93%;}
+
+img {
+    border: 0;
+    max-width: 100%;
+}
+
 .ui-btn-group-customized {
     padding: 0 .53em;
+}
+.ui-btn-customized {
+    width: 100px !important;
+    background-color: #cc1137 !important /*#ededed{a-bhover-background-color}*/;
+    border-color: #606060 /*#ddd{a-bhover-border}*/;
+    margin: 10px auto !important;
+    float: center !important;
+    color: #f8e7b8 !important /*#333{a-bhover-color}*/;
 }
 .ui-btn-l-customized {
     width: 110px !important;
@@ -60,6 +77,20 @@ a, a:link, a:visited, a:hover, a:active {cursor: pointer;text-decoration:none; c
     background: white !important;
 }
 .ui-input-label-customized {
-    color:  #f8e7b8 !important;
+    color: #f8e7b8 !important;
 }
-
+.ui-dialog-background-customized {
+    background-color:  #52151A !important;
+}
+.ui-dialog-content-background-customized {
+    background-color: #161414 !important
+}
+.ui-dialog-message-customized {
+    width: 90% !important;
+    margin: 20px auto !important;
+    float: center !important;
+}
+.ui-input-submit-customized {
+    background: url('../images/submit.png') no-repeat!important;
+    cursor:pointer;
+}

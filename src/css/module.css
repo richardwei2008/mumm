@@ -6,13 +6,6 @@ body, button, input, select, textarea {
 	FONT-SIZE: 16px;color:#F8E6B8; LINE-HEIGHT: 170%; FONT-FAMILY:"微软雅黑", "verdana", "arial";text-align:justify; text-justify:inter-ideograph;
 }
 
-.Selecta{ border:none; width:150px;border:1px solid #ccc;color:#000; height:25px; font-size: 16px; line-height:20px; }
-
-.Selectc{ border:none; width:170px;border:1px solid #ccc;color:#000; height:25px; font-size: 16px; line-height:20px; }
-
-.Selectd{ border:none; width:70px;border:1px solid #ccc;color:#000; height:25px; font-size: 16px; line-height:20px; }
-
-
 
 ul, ol, li {
 	list-style: none
