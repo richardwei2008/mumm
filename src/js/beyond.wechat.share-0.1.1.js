@@ -31,7 +31,7 @@
 			"subscribe_time": null
 		};
 		window.shareData = {
-			"imgUrl": window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/images/shareicon.jpg",
+			"imgUrl": window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/../images/shareicon.jpg",
 			//可以是页面的头像，也可以是自己定义的一张图片不变，每个页面可以有这个JS
 			"timeLineLink": "http://mp.weixin.qq.com/s?__biz=MzA3MDE3NzMwOQ==&mid=201143105&idx=1&sn=502c49cfe41494f6cbf801256fe87721#rd", // window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/share.html",
 			"sendFriendLink": "http://mp.weixin.qq.com/s?__biz=MzA3MDE3NzMwOQ==&mid=201143105&idx=1&sn=502c49cfe41494f6cbf801256fe87721#rd", // window.location.href.substring(0, window.location.href.lastIndexOf('/')) + "/share.html",
