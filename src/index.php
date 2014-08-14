@@ -184,7 +184,7 @@ class BeyondWechatApplication
     }
 
     private function checkGame($fromUsername, $toUsername) {
-        $url = 'http://beyonddev1.sinaapp.com/info/index.html?openid='.$fromUsername;
+        $url = 'http://beyonddev1.sinaapp.com/index.html?openid='.$fromUsername;
         $record=array(
             'title' =>'参与玛姆香槟F1竞猜，尽享礼遇！',
             'description' =>'即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼...',
