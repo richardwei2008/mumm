@@ -23,6 +23,15 @@ if (isset($_GET['echostr'])) {
 
 class BeyondWechatApplication
 {
+    private $textTpl = "<xml>
+                        <ToUserName><![CDATA[%s]]></ToUserName>
+                        <FromUserName><![CDATA[%s]]></FromUserName>
+                        <CreateTime>%s</CreateTime>
+                        <MsgType><![CDATA[%s]]></MsgType>
+                        <Content><![CDATA[%s]]></Content>
+                        <FuncFlag>0</FuncFlag>
+                        </xml>";
+
     private $newsTplHead = "<xml>
                 <ToUserName><![CDATA[%s]]></ToUserName>
                 <FromUserName><![CDATA[%s]]></FromUserName>
@@ -103,65 +112,104 @@ class BeyondWechatApplication
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
         if (!empty($postStr)){
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
-            $fromUsername = $postObj->FromUserName;
-            $toUsername = $postObj->ToUserName;
-            $keyword = trim($postObj->Content);
-            $time = time();
-            $textTpl = "<xml>
-                        <ToUserName><![CDATA[%s]]></ToUserName>
-                        <FromUserName><![CDATA[%s]]></FromUserName>
-                        <CreateTime>%s</CreateTime>
-                        <MsgType><![CDATA[%s]]></MsgType>
-                        <Content><![CDATA[%s]]></Content>
-                        <FuncFlag>0</FuncFlag>
-                        </xml>";
-
-            if (!empty($keyword)) {
-                switch ($keyword)
-                {
-                    case "?":
-                    case "？":
-                        $msgType = "text";
-                        $contentStr = date("Y-m-d H:i:s",time());
-                        $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                        echo $resultStr;
-                        break;
-                    case "m":
-                    case "M":
-                        $msgType = "text";
-                        // $urlToGetUserProfile = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=".OPENID."&lang=zh_CN"
-                        $contentStr = date("Y-m-d H:i:s",time())."OPENID: ".$fromUsername;
-                        $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                        echo $resultStr;
-                        break;
-                    case "f1":
-                    case "F1":
-                        $resultStr = $this->checkGame($fromUsername, $toUsername);
-                        echo $resultStr;
-                        break;
-                    case "赛程":
-                        $resultStr = $this->checkSchedule($fromUsername, $toUsername);
-                        echo $resultStr;
-                        break;
-                    case "中奖":
-                    case "未中奖":
-                        $resultStr = $this->checkGuess($fromUsername, $toUsername);
-                        echo $resultStr;
-                        break;
-                    default :
-                        $msgType = "text";
-                        $contentStr = "感谢您关注【玛姆香槟人生玩家】\n请回复内容：\n 1. \" F1 \"  - (参与F1冠军竞猜)\n 2. \" 中奖 \"  - (查询竞猜中奖)\n 3. \" 赛程 \"  - (查看F1赛程)";
-                        $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                        echo $resultStr;
-                        break;
-                }
-            } else {
-                echo "查询文字不能为空白";
+            $RX_TYPE = trim($postObj->MsgType);
+            switch($RX_TYPE)
+            {
+                case "text":
+                    $resultStr = $this->handleText($postObj);
+                    break;
+                case "event":
+                    $resultStr = $this->handleEvent($postObj);
+                    break;
+                default:
+                    $resultStr = "Unknow msg type: ".$RX_TYPE;
+                    break;
             }
         }else{
             echo "";
             exit;
         }
+    }
+
+    private function handleEvent($postObj) {
+        $fromUsername = $postObj->FromUserName;
+        $toUsername = $postObj->ToUserName;
+        $msgType = "text";
+        $time = time();
+        switch ($postObj->Event)
+        {
+            case "subscribe":
+//                $contentStr = $this->responseDefaultText($fromUsername);
+//                $resultStr = sprintf($this->textTpl, $fromUsername, "", $time, $msgType, $contentStr);
+//                echo $resultStr;
+                $resultStr = $this->checkGame($fromUsername, $toUsername);
+                echo $resultStr;
+                break;
+            default :
+                $contentStr = "未知消息: ".$postObj->Event.".请联系微信客服";
+                break;
+        }
+    }
+
+
+    private function handleText($postObj) {
+        $fromUsername = $postObj->FromUserName;
+        $toUsername = $postObj->ToUserName;
+        $keyword = trim($postObj->Content);
+        $time = time();
+
+        if (!empty($keyword)) {
+            switch ($keyword)
+            {
+//                case "?":
+//                case "？":
+//                    $msgType = "text";
+//                    $contentStr = date("Y-m-d H:i:s",time());
+//                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+//                    echo $resultStr;
+//                    break;
+//                case "m":
+//                case "M":
+//                    $msgType = "text";
+//                    // $urlToGetUserProfile = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=".OPENID."&lang=zh_CN"
+//                    $contentStr = date("Y-m-d H:i:s",time())."OPENID: ".$fromUsername;
+//                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+//                    echo $resultStr;
+//                    break;
+                case "f1":
+                case "F1":
+                    $resultStr = $this->checkGame($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
+                case "赛程":
+                    $resultStr = $this->checkSchedule($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
+                case "中奖":
+                    $resultStr = $this->checkGuess($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
+                case "未中奖":
+                    $resultStr = $this->wrong($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
+                default :
+                    $msgType = "text";
+                    $contentStr = $this->responseDefaultText($fromUsername);
+                    $resultStr = sprintf($this->textTpl, $fromUsername, "", $time, $msgType, $contentStr);
+                    echo $resultStr;
+                    break;
+            }
+        } else {
+            echo "查询文字不能为空白";
+        }
+    }
+
+    private function responseDefaultText($fromUsername) {
+//        if ($fromUsername === null) {
+        $fromUsername = "";
+//        }
+        return "感谢您关注【玛姆香槟人生玩家】".$fromUsername."\n请回复内容：\n 1. \" F1 \"  - (参与F1冠军竞猜)\n 2. \" 中奖 \"  - (查询竞猜中奖)\n 3. \" 赛程 \"  - (查看F1赛程)";
     }
 
     private function checkSchedule($fromUsername, $toUsername) {
@@ -222,6 +270,25 @@ class BeyondWechatApplication
         if ($isBingo) {
             $content = $bingoMessage;
         }
+        $header = sprintf($this->newsTplHead, $fromUsername, $toUsername, time());
+        $title = $content['title'];
+        $desc = $content['description'];
+        $picUrl = $content['picUrl'];
+        $url = $content['url'];
+        $body = sprintf($this->newsTplBody, $title, $desc, $picUrl, $url);
+        $FuncFlag = 0;
+        $footer = sprintf($this->newsTplFoot, $FuncFlag);
+        return $header.$body.$footer;
+    }
+
+    public function wrong($fromUsername, $toUsername) {
+        $missMessage = array(
+            'title' =>'2014 F1 比利时 斯帕站竞猜结果',
+            'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
+            'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
+            'url' =>'http://beyonddev1.sinaapp.com/cashlottery/miss.html?openid='.$fromUsername
+        );
+        $content = $missMessage;
         $header = sprintf($this->newsTplHead, $fromUsername, $toUsername, time());
         $title = $content['title'];
         $desc = $content['description'];
