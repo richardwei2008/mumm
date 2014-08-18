@@ -126,3 +126,6 @@ img {
     margin: 20px auto !important;
     float: center !important;
 }
+.ui-field-contain-custom {
+    margin: 0 0 !important;
+}
