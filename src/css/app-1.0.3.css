@@ -22,7 +22,7 @@ a, a:link, a:visited, a:hover, a:active {cursor: pointer;text-decoration:none; c
 .app_main .btn_exp3{ top:63.96%; left:5.18%;}
 .app_main .btn_exp4{ top:63.96%; left:52.18%;}
 .app_main .btn_xq{ display:block; width:60.12%; height:19.74%; line-height:0; font-size:0; background:url(#); position:absolute;}
-.app_main .btn_xq05{ top:70.96%; left:25.93%;}
+.app_main .btn_xq05{ top:77.96%; left:25.93%;}
 .app_main .btn_zj{ display:block; width:80.12%; height:22.74%; line-height:0; font-size:0; background:url(#); position:absolute;}
 .app_main .btn_zj05{ top:66.96%; left:25.93%;}
 .app_main .btn_sc{ display:block; width:80.12%; height:22.74%; line-height:0; font-size:0; background:url(#); position:absolute;}
@@ -80,6 +80,15 @@ img {
     margin-right: 5px !important;
     border-style:none!important;
     background: url('../images/submit.png') no-repeat!important;
+    cursor:pointer;
+}
+.ui-btn-close-custom {
+    width: 130px !important;
+    height: 40px;
+    margin: 10px auto !important;
+    float: center !important;
+    border-style:none!important;
+    background: url('../images/close.png') no-repeat!important;
     cursor:pointer;
 }
 .ui-btn-l-customized {

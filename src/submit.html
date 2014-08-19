@@ -10,7 +10,7 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
     <link href="css/jquery.mobile-1.4.3.css" rel="stylesheet" type="text/css"/>
     <link href="css/jquery.mobile.customize-1.4.3.css" rel="stylesheet" type="text/css"/>
-    <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    <link href="css/app-1.0.3.css" rel="stylesheet" type="text/css"/>
 
     <script src="js/json2.js" type="text/javascript"></script>
     <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
@@ -283,7 +283,7 @@
         <div class="ui-dialog-message-customized">
             <p><span id="errorMsg" class="ui-input-label-customized"></span></p>
         </div>
-        <button class="ui-btn ui-shadow ui-corner-all ui-btn-customized" data-mini="true" data-inline="true" onclick="$('#error').dialog('close');">关    闭</button>
+        <button class="ui-btn ui-shadow ui-corner-all ui-btn-close-custom" data-mini="true" data-inline="true" onclick="$('#error').dialog('close');"></button>
     </div>
 </div>
 <div data-role="page" id="fatal" data-dismissible="false" data-close-btn="right" class="ui-dialog-background-customized">
@@ -294,7 +294,7 @@
         <div class="ui-dialog-message-customized">
             <p><span id="fatalMsg" class="ui-input-label-customized"></span></p>
         </div>
-        <button class="ui-btn ui-shadow ui-corner-all ui-btn-customized" data-mini="true" data-inline="true" onclick="$('#fatal').dialog('close');">关    闭</button>
+        <button class="ui-btn ui-shadow ui-corner-all ui-btn-close-custom" data-mini="true" data-inline="true" onclick="$('#fatal').dialog('close');"></button>
     </div>
 </div>
 </form>
