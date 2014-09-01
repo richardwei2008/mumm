@@ -22,7 +22,8 @@
                 openid = "FakeId";
             }
             $("#join").unbind('click').bind("click", function() {
-                window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/../submit.html?openid=' + openid;
+//                window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/../submit.html?openid=' + openid;
+                window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/../cashlottery/over.html?openid=' + openid;
             });
         });
     </script>

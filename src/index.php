@@ -189,10 +189,18 @@ class BeyondWechatApplication
                     $resultStr = $this->checkGuess($fromUsername, $toUsername);
                     echo $resultStr;
                     break;
+                case "over":
+                    $resultStr = $this->gameOver($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
                 case "未中奖":
                     $resultStr = $this->wrong($fromUsername, $toUsername);
                     echo $resultStr;
                     break;
+				case "YiKg":
+                    $resultStr = $this->visit($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;		
                 default :
                     $msgType = "text";
                     $contentStr = $this->responseDefaultText($fromUsername);
@@ -231,8 +239,29 @@ class BeyondWechatApplication
         return  $header.$body.$footer;
     }
 
+	 private function visit($fromUsername, $toUsername) {
+        // $url = 'http://beyonddev1.sinaapp.com/index.html?openid='.$fromUsername;
+        $url = 'http://beyonddev1.sinaapp.com/submit.html?openid='.$fromUsername;
+        $record=array(
+            'title' =>'参与玛姆香槟F1竞猜，尽享礼遇！',
+            'description' =>'即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼...',
+            'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_F1.jpg',
+            'url' => $url
+        );
+        $header = sprintf($this->newsTplHead, $fromUsername, $toUsername, time());
+        $title = $record['title'];
+        $desc = $record['description'];
+        $picUrl = $record['picUrl'];
+        $url = $record['url'];
+        $body = sprintf($this->newsTplBody, $title, $desc, $picUrl, $url);
+        $FuncFlag = 0;
+        $footer = sprintf($this->newsTplFoot, $FuncFlag);
+        return $header.$body.$footer;
+    }
+	
     private function checkGame($fromUsername, $toUsername) {
-        $url = 'http://beyonddev1.sinaapp.com/index.html?openid='.$fromUsername;
+        // $url = 'http://beyonddev1.sinaapp.com/index.html?openid='.$fromUsername;
+        $url = 'http://beyonddev1.sinaapp.com/cashlottery/over.html?openid='.$fromUsername;
         $record=array(
             'title' =>'参与玛姆香槟F1竞猜，尽享礼遇！',
             'description' =>'即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼...',
@@ -289,6 +318,26 @@ class BeyondWechatApplication
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/miss.html?openid='.$fromUsername
         );
         $content = $missMessage;
+        $header = sprintf($this->newsTplHead, $fromUsername, $toUsername, time());
+        $title = $content['title'];
+        $desc = $content['description'];
+        $picUrl = $content['picUrl'];
+        $url = $content['url'];
+        $body = sprintf($this->newsTplBody, $title, $desc, $picUrl, $url);
+        $FuncFlag = 0;
+        $footer = sprintf($this->newsTplFoot, $FuncFlag);
+        return $header.$body.$footer;
+    }
+
+    public function gameOver($fromUsername, $toUsername) {
+        $url = 'http://beyonddev1.sinaapp.com/cashlottery/over.html?openid='.$fromUsername;
+        $overMessage=array(
+            'title' =>'参与玛姆香槟F1竞猜，尽享礼遇！',
+            'description' =>'即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼...',
+            'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_F1.jpg',
+            'url' => $url
+        );
+        $content = $overMessage;
         $header = sprintf($this->newsTplHead, $fromUsername, $toUsername, time());
         $title = $content['title'];
         $desc = $content['description'];
