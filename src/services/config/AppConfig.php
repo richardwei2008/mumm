@@ -10,5 +10,5 @@ namespace app;
 
 
 class AppConfig {
-    const GAME = "Belgium斯帕";
+    const GAME = "Italy蒙扎";
 } 

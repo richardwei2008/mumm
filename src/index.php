@@ -281,13 +281,13 @@ class BeyondWechatApplication
 
     public function checkGuess($fromUsername, $toUsername) {
         $bingoMessage = array(
-            'title' =>'2014 F1 比利时 斯帕站竞猜结果',
+            'title' =>'2014 F1 意大利 蒙扎站竞猜结果',
             'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
             'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/bingo.html?openid='.$fromUsername
         );
         $missMessage = array(
-            'title' =>'2014 F1 比利时 斯帕站竞猜结果',
+            'title' =>'2014 F1 意大利 蒙扎站竞猜结果',
             'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
             'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/miss.html?openid='.$fromUsername
@@ -312,7 +312,7 @@ class BeyondWechatApplication
 
     public function wrong($fromUsername, $toUsername) {
         $missMessage = array(
-            'title' =>'2014 F1 比利时 斯帕站竞猜结果',
+            'title' =>'2014 F1 意大利 蒙扎站竞猜结果',
             'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
             'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/miss.html?openid='.$fromUsername
