@@ -43,7 +43,7 @@ class CashService {
             if (null === $pub) {
                 echo json_encode(array('success'=>false, 'type'=>'warn', 'code'=>'E002', 'request'=>$requestObj, 'object'=>null, 'message'=>"酒吧识别码无效(".$pubCode.")<br>请正确填写！"));
                 return;
-            } else if ((int)$pub->promoted_gift_amount >= 5) {
+            } else if ((int)$pub->promoted_gift_amount >= 10) {
                 echo json_encode(array('success'=>false, 'type'=>'warn', 'code'=>'E003', 'request'=>$requestObj, 'object'=>null, 'message'=>"非常抱歉，您来晚了<br>本店所有礼品已送出！"));
                 return;
             }
