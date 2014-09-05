@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>竞猜结果</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+
+    <link href="../css/jquery.mobile-1.4.3.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/jquery.mobile.customize-1.4.3.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/app-1.0.3.css" rel="stylesheet" type="text/css"/>
+
+    <script src="../js/json2.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>
+    <script src="../js/beyond.wechat.share-0.1.1.js" type="text/javascript"></script>
+    <script src="../js/app-1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(window).ready(function () {
+            var openid = $.getUrlParam('openid');
+            sessionStorage.setItem('openid', openid);
+            if (openid === null || openid === 'null') {
+                openid = "FakeId";
+            }
+            $("#schedule").unbind('click').bind("click", function() {
+                window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/../info/schedule_test.html?openid=' + openid;
+            });
+            $("#qrcode").unbind('click').bind("click", function() {
+                $.ajax({
+                    async : false,
+                    type : "POST",
+                    url: "../services/GuessService.php",
+                    contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                    timeout : 1000,
+                    datatype : "json",
+                    data: JSON.stringify({method : "POST", openid: openid}),
+                    success : function(response) {
+                        if (response.success) {
+                            window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/qrcode.html?openid=' + openid;
+                        } else {
+                            switch (response.code) {
+                                case 'E001':
+                                    $("#errorMsg").html(response.message);
+                                    break;
+                                default :
+                                    $("#errorMsg").html("未知错误，请联系管理员—" + JSON.stringify(response));
+                                    break;
+                            }
+                            $.mobile.changePage('#error', {transition: 'pop', role: 'dialog'});
+                        }
+                    },
+                    error : function (xhr, textStatus, errorThrown) {
+                        if (!$.isEmptyObject(xhr)) {
+                            $("#fatalMsg").html(xhr.responseText);
+                        } else {
+                            $("#fatalMsg").html(errorThrown);
+                        }
+                        $.mobile.changePage('#fatal', {transition: 'pop', role: 'dialog'});
+                    }
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div data-role="page" id="bingoPage">
+    <div data-role="content" data-position="fixed">
+        <div class="app_main">
+            <img class="bg_pic" src="../images/bingobg.test.jpg">
+            <!--
+            <a href="../info/schedule.html" class="btn_exp btn_exp3"></a>
+            <a href="qrcode.html" class="btn_exp btn_exp4"></a>
+            -->
+            <a id="schedule" class="btn_exp btn_exp3"></a>
+            <a id="qrcode" class="btn_exp btn_exp4"></a>
+        </div>
+    </div>
+</div>
+<div data-role="page" id="error" data-dismissible="false" data-close-btn="right"  class="ui-dialog-background-customized">
+    <div data-role="header">
+        <h1><span class="label label-danger">错误</span></h1>
+    </div>
+    <div data-role="content" class="ui-dialog-content-background-customized">
+        <div class="ui-dialog-message-customized">
+            <p><span id="errorMsg" class="ui-input-label-customized"></span></p>
+        </div>
+        <button class="ui-btn ui-shadow ui-corner-all ui-btn-close-custom" data-mini="true" data-inline="true" onclick="$('#error').dialog('close');"></button>
+    </div>
+</div>
+<div data-role="page" id="fatal" data-dismissible="false" data-close-btn="right" class="ui-dialog-background-customized">
+    <div data-role="header">
+        <h1><span class="label label-danger">严重错误</span></h1>
+    </div>
+    <div data-role="content" class="ui-dialog-content-background-customized">
+        <div class="ui-dialog-message-customized">
+            <p><span id="fatalMsg" class="ui-input-label-customized"></span></p>
+        </div>
+        <button class="ui-btn ui-shadow ui-corner-all ui-btn-close-custom" data-mini="true" data-inline="true" onclick="$('#fatal').dialog('close');"></button>
+    </div>
+</div>
+</body>
+</html>
