@@ -192,10 +192,10 @@ class BeyondWechatApplication
                     $resultStr = $this->checkGame($fromUsername, $toUsername);
                     echo $resultStr;
                     break;
-                case "测试赛程YiKg":
-                    $resultStr = $this->testSchedule($fromUsername, $toUsername);
-                    echo $resultStr;
-                    break;
+//                case "测试赛程YiKg":
+//                    $resultStr = $this->testSchedule($fromUsername, $toUsername);
+//                    echo $resultStr;
+//                    break;
                 case "赛程":
                     $resultStr = $this->checkSchedule($fromUsername, $toUsername);
                     echo $resultStr;
@@ -208,22 +208,22 @@ class BeyondWechatApplication
                     $resultStr = $this->wrong($fromUsername, $toUsername);
                     echo $resultStr;
                     break;
-                case "测试中奖YiKg":
-                    $resultStr = $this->testGuess($fromUsername, $toUsername);
-                    echo $resultStr;
-                    break;
-                case "测试未中奖YiKg":
-                    $resultStr = $this->testWrong($fromUsername, $toUsername);
-                    echo $resultStr;
-                    break;
-                case "over":
-                    $resultStr = $this->gameOver($fromUsername, $toUsername);
-                    echo $resultStr;
-                    break;
-				case "YiKg":
-                    $resultStr = $this->visit($fromUsername, $toUsername);
-                    echo $resultStr;
-                    break;		
+//                case "测试中奖YiKg":
+//                    $resultStr = $this->testGuess($fromUsername, $toUsername);
+//                    echo $resultStr;
+//                    break;
+//                case "测试未中奖YiKg":
+//                    $resultStr = $this->testWrong($fromUsername, $toUsername);
+//                    echo $resultStr;
+//                    break;
+//                case "over":
+//                    $resultStr = $this->gameOver($fromUsername, $toUsername);
+//                    echo $resultStr;
+//                    break;
+//				case "YiKg":
+//                    $resultStr = $this->visit($fromUsername, $toUsername);
+//                    echo $resultStr;
+//                    break;
                 default :
                     $msgType = "text";
                     $contentStr = $this->responseDefaultText($fromUsername);
@@ -248,7 +248,8 @@ class BeyondWechatApplication
         $record=array(
             'title' =>'2014年 F1赛程表',
             'description' =>'即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼...',
-            'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_schedule_201408261216.jpg',
+            'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
+//            'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_schedule_201408261216.jpg',
             'url' => $url
         );
         $header = sprintf($this->newsTplHead, $fromUsername, $toUsername, time());
@@ -283,7 +284,7 @@ class BeyondWechatApplication
 
 	 private function visit($fromUsername, $toUsername) {
         // $url = 'http://beyonddev1.sinaapp.com/index.html?openid='.$fromUsername;
-        $url = 'http://beyonddev1.sinaapp.com/submit.html?openid='.$fromUsername;
+        $url = 'http://beyonddev1.sinaapp.com/submit_201409051013.html?openid='.$fromUsername;
         $record=array(
             'title' =>'参与玛姆香槟F1竞猜，尽享礼遇！',
             'description' =>'即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼...',
@@ -302,8 +303,8 @@ class BeyondWechatApplication
     }
 	
     private function checkGame($fromUsername, $toUsername) {
-        // $url = 'http://beyonddev1.sinaapp.com/index.html?openid='.$fromUsername;
-        $url = 'http://beyonddev1.sinaapp.com/cashlottery/over.html?openid='.$fromUsername;
+         $url = 'http://beyonddev1.sinaapp.com/index.html?openid='.$fromUsername;
+//        $url = 'http://beyonddev1.sinaapp.com/cashlottery/over.html?openid='.$fromUsername;
         $record=array(
             'title' =>'参与玛姆香槟F1竞猜，尽享礼遇！',
             'description' =>'即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼...',
