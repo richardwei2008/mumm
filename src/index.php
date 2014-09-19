@@ -192,10 +192,10 @@ class BeyondWechatApplication
                     $resultStr = $this->checkGame($fromUsername, $toUsername);
                     echo $resultStr;
                     break;
-//                case "测试赛程YiKg":
-//                    $resultStr = $this->testSchedule($fromUsername, $toUsername);
-//                    echo $resultStr;
-//                    break;
+                case "测试赛程YiKg":
+                    $resultStr = $this->testSchedule($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
                 case "赛程":
                     $resultStr = $this->checkSchedule($fromUsername, $toUsername);
                     echo $resultStr;
@@ -208,22 +208,22 @@ class BeyondWechatApplication
                     $resultStr = $this->wrong($fromUsername, $toUsername);
                     echo $resultStr;
                     break;
-//                case "测试中奖YiKg":
-//                    $resultStr = $this->testGuess($fromUsername, $toUsername);
-//                    echo $resultStr;
-//                    break;
-//                case "测试未中奖YiKg":
-//                    $resultStr = $this->testWrong($fromUsername, $toUsername);
-//                    echo $resultStr;
-//                    break;
-//                case "over":
-//                    $resultStr = $this->gameOver($fromUsername, $toUsername);
-//                    echo $resultStr;
-//                    break;
-//				case "YiKg":
-//                    $resultStr = $this->visit($fromUsername, $toUsername);
-//                    echo $resultStr;
-//                    break;
+                case "测试中奖YiKg":
+                    $resultStr = $this->testGuess($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
+                case "测试未中奖YiKg":
+                    $resultStr = $this->testWrong($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
+                case "over":
+                    $resultStr = $this->gameOver($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
+				case "YiKg":
+                    $resultStr = $this->visit($fromUsername, $toUsername);
+                    echo $resultStr;
+                    break;
                 default :
                     $msgType = "text";
                     $contentStr = $this->responseDefaultText($fromUsername);
@@ -283,8 +283,8 @@ class BeyondWechatApplication
     }
 
 	 private function visit($fromUsername, $toUsername) {
-        // $url = 'http://beyonddev1.sinaapp.com/index.html?openid='.$fromUsername;
-        $url = 'http://beyonddev1.sinaapp.com/submit_201409051013.html?openid='.$fromUsername;
+        // $url = 'http://beyonddev1.sinaapp.com/index.html?openid='.$fromUsername; // TODO
+        $url = 'http://beyonddev1.sinaapp.com/submit_201409191027.html?openid='.$fromUsername;
         $record=array(
             'title' =>'参与玛姆香槟F1竞猜，尽享礼遇！',
             'description' =>'即刻加入我们的竞猜吧！玛姆香槟预祝每位 人生玩家 获得玩家好礼...',
@@ -324,13 +324,13 @@ class BeyondWechatApplication
 
     public function checkGuess($fromUsername, $toUsername) {
         $bingoMessage = array(
-            'title' =>'2014 F1 比利时 斯帕站竞猜结果',
+            'title' =>'2014 F1 意大利 蒙扎站竞猜结果',
             'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
             'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/bingo.html?openid='.$fromUsername
         );
         $missMessage = array(
-            'title' =>'2014 F1 比利时 斯帕站竞猜结果',
+            'title' =>'2014 F1 意大利 蒙扎站竞猜结果',
             'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
             'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/miss.html?openid='.$fromUsername
@@ -355,13 +355,13 @@ class BeyondWechatApplication
 
     public function testGuess($fromUsername, $toUsername) {
         $bingoMessage = array(
-            'title' =>'2014 F1 意大利 蒙扎站竞猜结果',
+            'title' =>'2014 F1 新加坡站竞猜结果',
             'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
             'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/bingo_test.html?openid='.$fromUsername
         );
         $missMessage = array(
-            'title' =>'2014 F1 意大利 蒙扎站竞猜结果',
+            'title' =>'2014 F1 新加坡站竞猜结果',
             'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
             'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/miss_test.html?openid='.$fromUsername
@@ -384,7 +384,7 @@ class BeyondWechatApplication
 
     public function wrong($fromUsername, $toUsername) {
         $missMessage = array(
-            'title' =>'2014 F1 比利时 斯帕站竞猜结果',
+            'title' =>'2014 F1 意大利 蒙扎站竞猜结果',
             'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
             'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/miss.html?openid='.$fromUsername
@@ -403,7 +403,7 @@ class BeyondWechatApplication
 
     public function testWrong($fromUsername, $toUsername) {
         $missMessage = array(
-            'title' =>'2014 F1 意大利 蒙扎站竞猜结果',
+            'title' =>'2014 F1 新加坡站竞猜结果',
             'description' =>'激动么？！竞猜结果马上要公布！MUMM香槟即将开启！',
             'picUrl' => 'http://beyonddev1.sinaapp.com/images/m_result.jpg',
             'url' =>'http://beyonddev1.sinaapp.com/cashlottery/miss_test.html?openid='.$fromUsername

@@ -27,7 +27,8 @@ $customerService->makeGuess($requestObj);
 
 class CustomerService {
     public function makeGuess($requestObj) {
-        $game = AppConfig::GAME;
+//        $game = AppConfig::GAME; // TODO
+        $game = AppConfig::GAME_TEST;
         $customer = null;
         $openid = $requestObj->openid;
         if (null === $openid || 'null' === $openid || '' === trim($openid)) {
